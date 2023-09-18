@@ -1,0 +1,62 @@
+label {
+    display: block;
+    margin-top: 10px;
+  }
+
+  /* payment-form.component.css */
+
+/* Center the form on the page */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+/* Style for form labels */
+.form-group label {
+  font-weight: bold;
+}
+
+/* Style for form inputs */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style for the submit button */
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.form-group{
+  width: 50%;
+}
+.form-control{
+  width: 100%;
+}
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+.card {
+  background-color: aliceblue;
+  margin: 0 auto 25px;
+  margin-top: 50px;
+  width: 60%;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+

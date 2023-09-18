@@ -1,0 +1,102 @@
+
+<div class="container">
+    <h4>APPLY FOR CREDIT CARD</h4>
+    <div class="alert alert-success alert-dismissible" *ngIf="message">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>{{message}}</strong> 
+    </div>
+    <div class="alert alert-danger alert-dismissible" *ngIf="errorMessage">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>{{errorMessage}}</strong> 
+    </div>
+    <div>
+        <form (ngSubmit)="createApplication()" [formGroup]="applicationForm" class="form" novalidate >
+
+            <div class="form-group">
+                <label for="name"> Enter full name : </label>
+                <input 
+                type="text" 
+                formControlName="name" 
+                class="form-control" 
+                id="name" placeholder="Please enter your name"/>
+                <div *ngIf="applicationForm.get('name').invalid && applicationForm.get('name').touched" 
+                class="alert alert-danger">
+                    <div *ngIf="applicationForm.get('name').hasError('required')">
+                        Name number is mandatory
+                    </div>
+                    <div *ngIf="applicationForm.get('name').hasError('minlength')">
+                        Name must be at least 4 characters long
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="panNumber"> Enter PAN number : </label>
+                <input 
+                type="text" 
+                formControlName="panNumber" 
+                class="form-control" 
+                id="panNumber" placeholder="Please enter PAN number"/>
+                <div
+                    *ngIf="applicationForm.get('panNumber').invalid && applicationForm.get('panNumber').touched"
+                    class="alert alert-danger"
+                    >
+                    <div *ngIf="applicationForm.get('panNumber').hasError('required')">
+                        PAN Number is required.
+                    </div>
+                    <div *ngIf="applicationForm.get('panNumber').hasError('pattern')">
+                        Invalid PAN Number. Please enter a valid PAN Number.
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="aadharNumber"> Please enter your Aadhar Number : </label>
+                <input 
+                type="number" 
+                formControlName="aadharNumber" 
+                class="form-control" 
+                id="aadharNumber" placeholder="Please enter your aadharNumber"/>
+                <div
+                    *ngIf="applicationForm.get('aadharNumber').invalid && applicationForm.get('aadharNumber').touched"
+                    class="alert alert-danger"
+                    >
+                    <div *ngIf="applicationForm.get('aadharNumber').hasError('required')">
+                        Aadhar Number is required.
+                    </div>
+                    <div *ngIf="applicationForm.get('aadharNumber').hasError('pattern')">
+                        Invalid Aadhar Number. Please enter a valid Aadhar Number.
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="dateOfBirth"> Enter Date of Birth : </label>
+                <input 
+                type="date" 
+                formControlName="dateOfBirth" 
+                class="form-control" 
+                id="dateOfBirth" placeholder="Please enter your date of Birth"/>
+                <div *ngIf="applicationForm.get('dateOfBirth').invalid && applicationForm.get('dateOfBirth').touched" class="alert alert-danger">
+                    <div *ngIf="applicationForm.get('dateOfBirth').hasError('required')">Date of Birth is required.</div>
+                    <div *ngIf="applicationForm.get('dateOfBirth').hasError('minimumBirthdate')">Minimum age requirement not met.</div>
+                  </div>
+            </div>
+            <div class="form-group">
+                <label for="income"> Enter annual Income : </label>
+                <input 
+                type="number" 
+                formControlName="income" 
+                class="form-control" 
+                id="income" placeholder="Please enter your annual income"
+                required 
+                min="200000"/>
+                <div *ngIf="applicationForm.get('income').invalid && applicationForm.get('income').touched" 
+                class="alert alert-danger">
+                    <div *ngIf="applicationForm.get('income').hasError('required')">Annual Income is mandatory</div>
+                    <div *ngIf="applicationForm.get('income').hasError('min')">Income must be more than 2,00,000 to be eligible for credit</div>
+                  </div>
+            </div>
+            
+            
+            <input type="submit" class="btn btn-success" [disabled]="!applicationForm.valid" value="APPLY">
+        </form>
+    </div>
+</div>

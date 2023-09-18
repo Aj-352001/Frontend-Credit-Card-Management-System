@@ -1,0 +1,29 @@
+/* help.component.css */
+.help {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+h2{
+  padding: 20px;
+}
+
+  .faq-item {
+    margin-bottom: 20px;
+    border: 1px solid #bdb7b7;
+    border-radius: 5px;
+  }
+  
+  .help-question {
+    background-color: #010000;
+    padding: 10px;
+    margin: 10px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .help-answer {
+    padding: 10px;
+  }
+  

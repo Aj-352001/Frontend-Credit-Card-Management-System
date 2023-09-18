@@ -1,0 +1,78 @@
+*{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+/* styles.css or your component-specific CSS file */
+.mdc-dialog__container {
+    top: 0px;
+}
+.container{
+    position: absolute;
+    top: 0;
+}
+/* styles.css or your component-specific CSS file */
+
+/* Styling for the overlay background */
+.mat-dialog-container {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    display: flex;
+    flex-direction: column; /* Align content vertically at the top */
+    align-items: center;
+    justify-content: flex-start; /* Align content at the top */
+    min-height: 100vh; /* Full viewport height */
+    padding: 20px; /* Add padding for space at the top */
+    box-sizing: border-box; /* Include padding in height calculation */
+  }
+  
+  /* Styling for the dialog content */
+  .mat-dialog-content {
+    background-color: #fff; /* Background color for the dialog content */
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Drop shadow */
+    max-width: 400px; /* Adjust the maximum width as needed */
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Styling for the dialog title */
+  .mat-dialog-title {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for the dialog actions (buttons) */
+  .mat-dialog-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* Styling for the dialog buttons */
+  .mat-dialog-actions button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Styling for the OK button */
+  .mat-dialog-actions button.mat-button.mat-primary {
+    background-color: #007bff; /* Primary button color */
+    color: #fff;
+  }
+  
+  /* Styling for the Cancel button */
+  .mat-dialog-actions button.mat-button.mat-secondary {
+    background-color: #ccc; /* Secondary button color */
+    color: #333;
+  }
+  
+  /* Hover effect for buttons */
+  .mat-dialog-actions button:hover {
+    opacity: 0.8;
+  }
+  

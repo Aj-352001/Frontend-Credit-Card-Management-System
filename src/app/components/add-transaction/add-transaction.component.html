@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transactions</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h3 class="heading">Add new transaction</h3>
+        <div class="alert alert-success alert-dismissible" *ngIf="message">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>{{ message }}</strong>
+        </div>
+    
+        <div class="alert alert-danger alert-dismissible" *ngIf="error">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>{{ error }}</strong>
+        </div>
+    
+        <form (ngSubmit)="addTransaction()" #transactionForm="ngForm" class="was-validated form" novalidate>
+            <div class="form-group">
+                <label  for="creditCardNumber">Credit Card Number:</label>
+                <input id="creditCardNumber" type="number" class="form-control" [(ngModel)]="creditCard.creditCardINumber" name="creditCardNumber" id="creditCardNumber" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <!-- <div class="form-group">
+                <label for="transactionTimestamp">Timestamp:</label>
+                <input type="datetime-local" class="form-control" [(ngModel)]="Transaction.timestamp" name="transactionTimestamp" id="timestamp" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div> -->
+            <div class="form-group">
+                <label for="transactionAmount">Amount:</label>
+                <input type="number" class="form-control" [(ngModel)]="Transaction.amount" name="transactionAmount" id="amount" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="transactionPurchaseInfo">Purchase Information:</label>
+                <input type="text" class="form-control" [(ngModel)]="Transaction.purchaseInformation" name="transactionPurchaseInfo" id="purchaseInformation" required placeholder="Purchase Information">
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="!transactionForm.form.valid">Submit</button>
+        </form>
+    </div>
+    
+    
+</body>
+<script >
+    $('#creditcardNumber').on('keyup', function(e){
+    var val = $(this).val();
+    var newval = '';
+    val = val.replace(/\s/g, '');
+    for(var i=0; i < val.length; i++) {
+        if(i%4 == 0 && i > 0) newval = newval.concat(' ');
+        newval = newval.concat(val[i]);
+    }
+$(this).val(newval);
+});
+</script>
+</html>
+
+
+

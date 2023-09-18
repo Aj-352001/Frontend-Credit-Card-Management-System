@@ -1,0 +1,64 @@
+
+* {
+  line-height: 1.5rem;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+/* Card */
+.container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  flex-direction: row;
+}
+.card2 {
+    margin: 20px;
+    padding: 8px;
+  width: 380px;
+  height: 230px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  z-index: 1;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(62, 161, 219, 1) 11.2%,
+    rgba(93, 52, 236, 1) 100.2%
+  );
+}
+.visa_logo {
+  display: inline;
+  float: right;
+  padding: 5px;
+}
+
+.visa_logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.visa_info img {
+  width: 60px;
+  height: 45px;
+}
+
+.visa_info p {
+  font-size: 22px;
+  padding: 10px 0;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+.visa_crinfo {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
+  color: #ffffff;
+}

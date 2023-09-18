@@ -1,0 +1,38 @@
+
+<ng-container *ngIf=!isUpdate>
+    <div class="container">
+        <h3>Application</h3>
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>PAN number</th>
+                    <th>Aadhar Number</th>
+                    <th>Date of birth</th>
+                    <th>Income</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let application of applications">
+                    <td>{{application.applicationId}}</td>
+                    <td>{{application.name}}</td>
+                    <td>{{application.panNumber}}</td>
+                    <td>{{application.aadharNumber}}</td>
+                    <td>{{application.dateOfBirth}}</td>
+                    <td>{{application.income}}</td>
+                    <td>{{application.status}}</td>
+                    <td><button type="button" class="btn btn-info" (click)="createCreditCard(application.applicationId)">APPROVED</button></td>
+                    <td><button type="button" class="btn btn-danger" (click)="deleteApplication(application.applicationId)">REJECTED</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</ng-container>
+
+
+<!-- <div class="alert alert-success alert-dismissible" *ngIf="isUpdateSuccess">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Success update!</strong>
+  </div> -->

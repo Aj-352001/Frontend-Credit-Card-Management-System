@@ -1,0 +1,17 @@
+table{
+    border: 1px solid black;
+    margin: 10px;
+    box-shadow: 10px 10px 5px grey;
+    background-color: aliceblue;
+
+}
+.container{
+    justify-content: center;
+    text-align: center;
+}
+th{
+    background-color: rgb(192, 213, 213);
+}
+.heading{
+    margin: 20px;
+}

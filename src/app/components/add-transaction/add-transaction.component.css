@@ -1,0 +1,14 @@
+.heading{
+    margin: 20px;
+}
+.container{
+    width: 60%;
+}
+.form{
+    border: 1px solid grey;
+    padding: 3%;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px grey;
+    background-color: aliceblue;
+
+}

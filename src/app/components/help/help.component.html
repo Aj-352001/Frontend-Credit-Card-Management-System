@@ -1,0 +1,9 @@
+
+<div class="help">
+    <h2>Frequently Asked Questions</h2>
+    <div *ngFor="let helpItem of helpItems" class="help-item">
+      <div class="help-question" (click)="toggleAnswer(helpItem)">{{ helpItem.question }}</div>
+      <div [class.open]="!helpItem.isOpen" class="help-answer">{{ helpItem.answer }}</div>
+    </div>
+  </div>
+  

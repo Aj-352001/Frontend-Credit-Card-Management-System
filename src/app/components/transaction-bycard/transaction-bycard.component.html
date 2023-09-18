@@ -1,0 +1,31 @@
+
+
+<div class="container transaction-list">
+    <h3 class="mb-4">All Transactions</h3>
+  
+    <!-- Credit Card Number Input -->
+    <div class="form-group">
+      <label for="creditCardNumber">Credit Card Number:</label>
+      <input type="text" id="creditCardNumber" [(ngModel)]="creditCardINumber" name="creditCardNumber" class="form-control" placeholder="Enter 16-digit credit card number">
+      <div *ngIf="isInvalidCreditCardNumber()" class="alert alert-danger mt-2">
+        Credit card number must be exactly 16 digits.
+      </div>
+    </div>
+  
+    <!-- Submit Button -->
+    <button (click)="getTransactionsByCard()" class="btn btn-primary">Show Transactions</button>
+  
+    <!-- Display Error Message -->
+    <div class="alert alert-danger mt-4" *ngIf="errorMessage">{{ errorMessage }}</div>
+  
+    <!-- Display Transactions -->
+    <ul *ngIf="transactions" class="mt-4">
+      <li *ngFor="let transaction of transactions" class="mb-3">
+        <strong>Transaction ID:</strong> {{ transaction.transactionID }}<br>
+        <strong>Timestamp:</strong> {{ transaction.timeStamp  }}<br>
+        <strong>Purchase Information:</strong> {{ transaction.purchaseInformation }}<br>
+        <strong>Amount:</strong> {{ transaction.amount | currency:'INR' }}
+      </li>
+    </ul>
+  </div>
+  

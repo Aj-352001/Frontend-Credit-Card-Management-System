@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script >
+        $('#creditcardId').on('keyup', function(e){
+        var val = $(this).val();
+        var newval = '';
+        val = val.replace(/\s/g, '');
+        for(var i=0; i < val.length; i++) {
+            if(i%4 == 0 && i > 0) newval = newval.concat(' ');
+            newval = newval.concat(val[i]);
+        }
+    $(this).val(newval);
+    });
+    </script>
+</head>
+<body>
+    
+<div class="container">
+    <div *ngFor="let creditcard of creditcards" >
+        <div class="card2 ">
+            <div class="visa_logo">
+                <img src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/visa.png" alt="">
+            </div>
+            <div >
+                <div class="visa_info">
+                    <p class="lender">{{creditcard.cardLender}}</p>
+                    <img src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/chip.png" alt="">
+                    <p id="creditcardId">{{creditcard.creditCardNumber}}</p>
+                    <p>{{creditcard.name}}</p>
+                </div>
+                <div class="visa_crinfo">
+                    <p>{{creditcard.issueDate}}</p>from
+                    <p>{{creditcard.expiryDate}}</p>expiry
+
+                    <div *ngFor="let application of applications">
+                        <p>{{application.name}}</p>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>  
+    
+</div>
+
+</body>
+
+</html>
